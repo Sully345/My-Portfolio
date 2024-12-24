@@ -1,0 +1,719 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins);
+@import url('https://fonts.cdnfonts.com/css/noir');
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: url('images/background/wallpaperflare.com_wallpaper.jpg') center/cover no-repeat fixed;
+    min-height: 100vh;
+}
+
+.weblogo {
+    position: fixed;
+    height: auto;
+    left: 260px;
+    width: 20px;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    height: 25vh;
+}
+
+.one, .two, .three, .four {
+    background-color: #121D31;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    background: transparent;
+    z-index: 100;
+}
+
+header .logo {
+    font-size: 18px;
+    font-family: "Poppins";
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+header nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+.logo {
+    font-size: 18px;
+    font-family: "Noir";
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    margin-left: 200px;
+    font-weight: 400;
+}
+
+.Welcome {
+    text-align: center;
+    font-size: 70px;
+    color: white;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    margin: auto;
+}
+
+#about, #services, #contact {
+    background-color: rgba(18, 29, 49, 0.8);
+}
+
+#contact {
+    color: white;
+}
+
+#about {
+    background-color: rgba(18, 29, 49, 0.8);
+    padding: 60px 20px;
+    color: white;
+}
+
+.INTRODUCTION {
+    font-size: 18px;
+    position: absolute;
+    color: rgb(170, 166, 195);
+    margin: 0;
+    margin-right: 1020px;
+    margin-bottom: 640px;
+    font-family: poppins;
+    font-weight: 400;
+    line-height: 27px;
+}
+
+.AboutMe {
+    font-size: 60px;
+    position: absolute;
+    color: #fff;
+    margin: 0;
+    margin-right: 850px;
+    margin-bottom: 600px;
+    margin-top: 60px;
+    font-family: poppins;
+    font-weight: 1900;
+}
+
+.AboutMeText {
+    position: absolute;
+    color: rgb(170, 166, 195);
+    text-align: left;
+    margin: 0;
+    margin-bottom: 200px;
+    margin-right: 435px;
+}
+
+.card {
+    width: 190px;
+    height: 254px;
+    background: #07182e;
+    position: absolute;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-top: 400px;
+    margin-right: 965px;
+}
+
+.card h2 {
+    z-index: 1;
+    color: #F7F6E0;
+    font-size: 20px;
+    margin-top: 70px;
+    text-align: center;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    background-image:  linear-gradient(180deg, rgb(255, 153, 0), rgb(255, 48, 151));
+    height: 130%;
+    animation: rotBGimg 3s linear infinite;
+    transition: all 0.2s linear;
+    filter: blur(30px);
+}
+
+
+@keyframes rotBGimg {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    background: #07182e;
+    inset: 5px;
+    border-radius: 15px;
+}
+
+.card2 {
+    width: 190px;
+    height: 254px;
+    background: #07182e;
+    position: absolute;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-top: 400px;
+    margin-right: 365px;
+}
+
+.card2 h2 {
+    z-index: 1;
+    color: #F7F6E0;
+    font-size: 20px;
+    margin-top: 70px;
+    text-align: center;
+}
+
+.card2::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    background-image: linear-gradient(180deg, rgb(255, 153, 0), rgb(255, 48, 151));
+    height: 130%;
+    animation: rotBGimg 3s linear infinite;
+    transition: all 0.2s linear;
+    filter: blur(30px);
+}
+
+.card2::after {
+    content: "";
+    position: absolute;
+    background: #07182e;
+    inset: 5px;
+    border-radius: 15px;
+}
+
+.card3 {
+    width: 190px;
+    height: 254px;
+    background: #07182e;
+    position: absolute;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-top: 400px;
+    margin-left: 265px;
+}
+
+.card3 h2 {
+    z-index: 1;
+    color: #F7F6E0;
+    font-size: 20px;
+    margin-top: 70px;
+    text-align: center;
+}
+
+.card3::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    background-image: linear-gradient(180deg, rgb(255, 153, 0), rgb(255, 48, 151));
+    height: 130%;
+    animation: rotBGimg 3s linear infinite;
+    transition: all 0.2s linear;
+    filter: blur(30px);
+}
+
+.card3::after {
+    content: "";
+    position: absolute;
+    background: #07182e;
+    inset: 5px;
+    border-radius: 15px;
+}
+
+.card4 {
+    width: 190px;
+    height: 254px;
+    background: #07182e;
+    position: absolute;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-top: 400px;
+    margin-left: 865px;
+}
+
+.card4 h2 {
+    z-index: 1;
+    color: #F7F6E0;
+    font-size: 20px;
+    margin-top: 70px;
+    text-align: center;
+}
+
+.card4::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    background-image: linear-gradient(180deg, rgb(255, 153, 0), rgb(255, 48, 151));
+    height: 130%;
+    animation: rotBGimg 3s linear infinite;
+    transition: all 0.2s linear;
+    filter: blur(30px);
+}
+
+.card4::after {
+    content: "";
+    position: absolute;
+    background: #07182e;
+    inset: 5px;
+    border-radius: 15px;
+}
+
+.webdev {
+    margin-left: 400px;
+    margin-top: 260px;
+    position: relative;
+    display: flex;
+}
+
+.React {
+    margin-left: 90px;
+    margin-top: 260px;
+    position: relative;
+    display: flex;
+}
+
+.Fullstack {
+    margin-right: 90px;
+    margin-top: 260px;
+    position: relative;
+    display: flex;
+}
+
+.UIDesigns {
+    margin-right: 450px;
+    margin-top: 260px;
+    position: relative;
+    display: flex;s
+}
+
+.container {
+    perspective: 1000px;
+}
+
+.card, .card2, .card3, .card4 {
+    width: 190px;
+    height: 254px;
+    background: #07182e;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-top: 400px;
+    transition: transform 0.1s ease-out, box-shadow 0.2s ease;
+    transform-style: preserve-3d;
+}
+
+.card:hover, .card2:hover, .card3:hover, .card4:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+.card img, .card2 img, .card3 img, .card4 img {
+    position: absolute;
+    top: 20px;
+    width: 60px;
+    height: auto;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.card h2, .card2 h2, .card3 h2, .card4 h2 {
+    margin-top: 90px;
+    position: relative;
+    z-index: 3;
+}
+
+.card:hover img, .card2:hover img, .card3:hover img, .card4:hover img {
+    transform: scale(1.2);
+}
+
+.card::before, .card2::before, .card3::before, .card4::before { 
+    content: '';
+    position: absolute;
+    width: 100px;
+    background-image: linear-gradient(180deg, rgb(255, 153, 0), rgb(255, 48, 151));
+    height: 130%;
+    animation: rotBGimg 3s linear infinite;
+    transition: all 0.2s linear;
+}
+
+.card::after, .card2::after, .card3::after, .card4::after {
+    content: "";
+    position: absolute;
+    background: #07182e;
+    inset: 5px;
+    border-radius: 15px;
+    transform: translateZ(-5px);
+}
+
+
+.card-list .card-item {
+    color: #fff;
+    user-select: none;
+    padding: 35px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    backdrop-filter: blur(30px);
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.card-list .card-item .user-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 40px;
+    border: 3px solid #fff;
+    padding: 4px;
+}
+
+.card-list .card-item .user-profession {
+    font-size: 1.15rem;
+    color: #e3e3e3;
+    font-weight: 500;
+    margin: 14px 0 40px;
+}
+
+.card-list .card-item .message-button {
+    font-size: 1.25rem;
+    padding: 10px 35px;
+    color: #030728;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid transparent;
+    transition: 0.2s ease;
+}
+
+.card-list .card-item .message-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid transparent;
+    color: #fff;
+}
+/* Slider Container */
+.slider {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    background: transparent;
+    border-radius: 20px;
+  }
+  
+ /* Slider Track */
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: calc(100% * (totalSlides + 6)); /* Adjust for cloned slides */
+  }
+  
+  
+  /* Individual Slide */
+  .slide {
+    flex: 0 0 33.33%;
+    padding: 30px;
+    text-align: center;
+    background: rgba(18, 29, 49, 0.8);
+    color: white;
+    border-radius: 10px;
+  }
+  
+  /* Navigation Buttons */
+  button.prev,
+  button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+    margin: 0px;
+  }
+  
+  button.prev { left: 10px; }
+  button.next { right: 10px; }
+  
+  button:hover {
+    background: rgba(255, 255, 255, 0.4);
+  }
+  
+  /* Dots */
+  .dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .dot.active {
+    background-color: #717171;
+  }
+  
+/* Card Image */
+.slide img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid #fff;
+}
+
+/* Card Content */
+.slide h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #F7F6E0;
+    margin-bottom: 15px;
+}
+
+.slide p {
+    font-size: 18px;
+    color: #9CA6C3;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* Contact Section */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+
+#contact .contact-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align to the left */
+    gap: 0; /* Remove any gap between elements */
+    position: relative; /* Ensure it creates a stacking context */
+    z-index: 1; /* Ensure the container is lower than Earth */
+}
+
+#contact .certificate {
+    margin-left: 200px;
+}
+
+.certificate:hover {
+    transition: ease-in-out 0.5s;
+    transform: scale(1.1);
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.4);
+}
+
+.certificate2:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.4);
+    transition: ease-in-out 0.5s
+}
+
+.certificate::before {
+    transition: ease 1s;
+}
+
+.certificate2::before {
+    transition: ease 1s;
+}
+
+.contact-right::after {
+    content: '';
+    position: absolute;
+    height: 700px;
+    width: 500px;
+    padding: 5px;
+    z-index: -1;
+    border-radius: 10px;
+    margin-top: -700px;
+    margin-left: 195px;
+    filter: blur(1.5rem);
+    background-image: conic-gradient(red, blue, red, blue, red);
+}
+
+#contact .certificate2 {
+    margin-left: 200px;
+}
+
+.contact-left {
+    background: #07182e;
+    border-radius: 30px;
+    position: relative;
+    padding: 70px 30px ; /* Make sure it's positioned correctly within the flow */
+    width: 450px;
+}
+
+.contact-left::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(red, blue, red, blue, red);
+    top: 0;
+    left: 0;
+    margin-left: -5px;
+    margin-top: -5px;
+    z-index: -1; /* Ensure it's behind the .contact-left */
+    border-radius: 30px;
+    padding: 5px 5px;
+    filter: blur(1.5rem);
+}
+
+/* Ensure .contact-left itself has no conflicting stacking contexts */
+.contact-container {
+    position: relative; /* Creates a local stacking context */
+}
+
+.contact-left-title h2 {
+    font-weight: 600;
+    color: #F7F6E0;
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.contact-left-title hr {
+    border: none;
+    width: 120px;
+    height: 5px;
+    background-color: #9CA6C3;
+}
+
+.contact-inputs {
+    width: 100%; /* Use full width of the contact form */
+    height: 60px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    font-weight: 500;
+    color: #ffffff;
+    border-radius: 20px;
+    margin-top: 10px;
+    background: #151D31;
+}
+
+.contact-left textarea {
+    height: 130px;
+    padding-top: 15px;
+    border-radius: 20px;
+}
+
+.contact-inputs:focus {
+    border: 2px solid #ff994f;
+}
+
+.contact-inputs::placeholder {
+    color: #9CA6C3;
+}
+
+.contact-left button {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    font-size: 16px;
+    color: #F7F6E0;
+    gap: 10px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(360deg, #fc3d39, #1f455f);
+    cursor: pointer;
+}
+
+.contact-left button img {
+    height: 15px;
+
+}
+
+
+@media (max-width: 800px) {
+    .contact-inputs {
+        width: 80vw;
+    }
+
+    .contact-right {
+        display: none; /* Hide Earth on mobile */
+    }
+}
+
+

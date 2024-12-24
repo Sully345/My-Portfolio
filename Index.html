@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_forward"
+    />
+    <title>Portfolio</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <header>
+      <img src="images/Logo/weblogo.png" class="weblogo" />
+
+      <a href="#" class="logo">SULLY</a>
+      <nav>
+        <a href="#Welcome">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Reviews</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section id="Welcome">
+      <div class="Welcome">WELCOME TO MY PORTFOLIO</div>
+    </section>
+
+    <section id="about">
+      <h2 class="INTRODUCTION">INTRODUCTION</h2>
+      <h1 class="AboutMe">About Me.</h1>
+      <p class="AboutMeText">
+        Welcome to my portfolio! My name is Sully, and I am a passionate and
+        dedicated<br />
+        web developer with over 300 hours of hands-on experience crafting
+        websites using<br />
+        HTML and CSS. I specialize in building responsive, visually appealing,
+        and user-friendly<br />
+        designs that bring ideas to life on the web. From conceptualizing
+        layouts to implementing<br />
+        modern web standards, I am constantly learning and improving my craft.
+        My journey in<br />
+        web development has been fueled by a love for problem-solving and a deep
+        curiosity<br />
+        about how the web works. This portfolio is a reflection of the
+        dedication, creativity,<br />
+        and technical expertise I bring to every project.
+      </p>
+
+      <!-- Card Elements with Images -->
+      <div class="card">
+        <img src="images/card 1-4/webdev.png" alt="Web Developer" />
+        <h2>Web<br />Developer</h2>
+      </div>
+
+      <div class="card2">
+        <img src="images/card 1-4/react.png" alt="React Developer" />
+        <h2>React Native<br />Developer</h2>
+      </div>
+
+      <div class="card3">
+        <img src="images/card 1-4/fullstack.png" alt="Fullstack Developer" />
+        <h2>Fullstack<br />Developer</h2>
+      </div>
+
+      <div class="card4">
+        <img src="images/card 1-4/UIDesigns.png" alt="UI Designs" />
+        <h2>UI/UX<br />Designs</h2>
+      </div>
+    </section>
+    <section id="services">
+      <div class="slider">
+        <div class="slider-track">
+          <!-- Slides -->
+          <div class="slide">
+            <img src="images/slider/mody.jpg" alt="James Wilson" />
+            <h2>Mody Safi</h2>
+            <p>
+              "Sully creates responsive websites with a strong foundation in
+              HTML, CSS, and JavaScript, ensuring seamless experiences across
+              devices with efficient, maintainable code."
+            </p>
+          </div>
+          <div class="slide">
+            <img src="images/slider/saf.jpg" alt="Sarah Johnson" />
+            <h2>Safwan Rahman</h2>
+            <p>
+              "The functionality of the website is clean and it uses a
+              consistent color pallet throughout the website."
+            </p>
+          </div>
+          <div class="slide">
+            <img src="images/slider/haroon.jpg" alt="Michael Brown" />
+            <h2>Haroon Qulumbe</h2>
+            <p>
+              "Sully is a talented web developer whose attention to detail ensures
+              each site is both beautiful and functional on any device."
+            </p>
+          </div>
+          <div class="slide">
+            <img src="images/slider/haris.jpg" alt="Richard Wilson" />
+            <h2>Haris Ali</h2>
+            <p>
+              "Sully’s ability to deliver clean, functional websites on time is
+              impressive. Highly recommend Sully for web development projects!"
+            </p>
+          </div>
+          <div class="slide">
+            <img src="images/slider/haris.jpg" alt="Richard Wilson" />
+            <h2>Haris Ali</h2>
+            <p>
+              "Sully’s ability to deliver clean, functional websites on time is
+              impressive. Highly recommend Sully for web development projects!"
+            </p>
+          </div>
+        </div>
+        <!-- Navigation Buttons -->
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+        <!-- Dots -->
+        <div class="dots">
+          <span class="dot" onclick="setSlide(0)"></span>
+          <span class="dot" onclick="setSlide(1)"></span>
+          <span class="dot" onclick="setSlide(2)"></span>
+          <span class="dot" onclick="setSlide(3)"></span>
+          <span class="dot" onclick="setSlide(4)"></span>
+        </div>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="script.js"></script>
+
+    <section id="contact">
+      <div class="contact-container">
+        <form
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          class="contact-left"
+        >
+          <div class="contact-left-title">
+            <h2>Get In Touch</h2>
+            <hr />
+          </div>
+          <input
+            type="hidden"
+            name="access_key"
+            value="92b10e7b-6266-45ad-9b5c-9ba5eb870019"
+          />
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            class="contact-inputs"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            class="contact-inputs"
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            class="contact-inputs"
+            required
+          ></textarea>
+          <button type="submit">Submit <img src="images/slider/arrow_icon.png" /></button>
+        </form>
+        <div class="contact-right">
+          <div class="certificate" id="certificate">
+            <img src="images/certificate/html and css certificate.png" width="500px">
+          </div>
+          <div class="certificate2" id="certificate2">
+            <img src="images/certificate/javascript certificate.png" width="500px">
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </body>
+</html>
