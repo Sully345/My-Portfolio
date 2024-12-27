@@ -1,88 +1,72 @@
-let currentIndex = 0; // Current slide index
-const slides = document.querySelectorAll('.slide');
-const sliderTrack = document.querySelector('.slider-track');
-const dots = document.querySelectorAll('.dot');
-const totalSlides = slides.length;
+document.addEventListener("DOMContentLoaded", () => {
+  const sliderTrack = document.querySelector(".slider-track");
+  const slides = Array.from(document.querySelectorAll(".slide"));
+  const prevButton = document.querySelector("button.prev");
+  const nextButton = document.querySelector("button.next");
+  const dots = document.querySelectorAll(".dot");
 
-// Clone first and last few slides for seamless looping
-const firstSlides = [...slides].slice(0, 3).map(slide => slide.cloneNode(true));
-const lastSlides = [...slides].slice(-3).map(slide => slide.cloneNode(true));
+  let currentSlide = 0;
+  const slideDistance = 33.3;
 
-// Append cloned slides
-firstSlides.forEach(slide => sliderTrack.appendChild(slide));
-lastSlides.reverse().forEach(slide => sliderTrack.insertBefore(slide, sliderTrack.firstChild));
+  // Duplicate slides for seamless looping
+  const numSlides = slides.length;
+  sliderTrack.innerHTML += sliderTrack.innerHTML; // Append duplicate slides
+  const allSlides = document.querySelectorAll(".slide"); // Update the slides list
 
-// Adjust the track to start at the correct slide
-sliderTrack.style.transform = `translateX(-${100 / 3}%)`;
+  const updateSlider = () => {
+      const offset = -currentSlide * slideDistance;
+      sliderTrack.style.transform = `translateX(${offset}%)`;
 
-// Update slider with seamless looping
-function updateSlider() {
-  sliderTrack.style.transition = 'transform 0.5s ease-in-out';
-  sliderTrack.style.transform = `translateX(-${(currentIndex + 3) * 33.33}%)`;
+      // Update active dot
+      dots.forEach((dot, index) => {
+          dot.classList.toggle("active", index === (currentSlide % numSlides));
+      });
+  };
 
-  updateDots();
+  const goToNextSlide = () => {
+      currentSlide++;
+      if (currentSlide >= allSlides.length / 2) {
+          // When reaching the duplicated slides, instantly jump to the first slide (without animation)
+          currentSlide = 0;
+          sliderTrack.style.transition = ""; // Disable transition
+          updateSlider();
 
-  // Seamless looping logic
-  setTimeout(() => {
-    if (currentIndex === -1) {
-      sliderTrack.style.transition = 'none';
-      currentIndex = totalSlides - 1;
-      sliderTrack.style.transform = `translateX(-${(currentIndex + 3) * 33.33}%)`;
-    } else if (currentIndex === totalSlides) {
-      sliderTrack.style.transition = 'none';
-      currentIndex = 0;
-      sliderTrack.style.transform = `translateX(-${(currentIndex + 3) * 33.33}%)`;
-    }
-  }, 500);
-}
+          // Re-enable transition after a short delay
+          setTimeout(() => {
+              sliderTrack.style.transition = ""; // Re-enable transition
+          }, 20); // Small delay to allow the browser to register the change
+      } else {
+          updateSlider();
+      }
+  };
 
-// Function to update dots
-function updateDots() {
+  const goToPrevSlide = () => {
+      currentSlide--;
+      if (currentSlide < 0) {
+          // When reaching the first slide, go to the last slide (without animation)
+          currentSlide = allSlides.length / 2 - 1; // Loop to last slide in duplicated set
+          sliderTrack.style.transition = ""; // Disable transition
+          updateSlider();
+
+          // Re-enable transition after a short delay
+          setTimeout(() => {
+              sliderTrack.style.transition = ""; // Re-enable transition
+          }, 20); // Small delay
+      } else {
+          updateSlider();
+      }
+  };
+
+  // Attach event listeners
+  if (prevButton) prevButton.addEventListener("click", goToPrevSlide);
+  if (nextButton) nextButton.addEventListener("click", goToNextSlide);
   dots.forEach((dot, index) => {
-    dot.classList.toggle('active', index === currentIndex);
+      dot.addEventListener("click", () => {
+          currentSlide = index;
+          updateSlider();
+      });
   });
-}
 
-// Move slides with direction (1 for next, -1 for previous)
-function moveSlide(direction) {
-  currentIndex += direction;
+  // Initialize slider
   updateSlider();
-}
-
-// Set slide directly
-function setSlide(index) {
-  currentIndex = index;
-  updateSlider();
-}
-
-// Select the elements
-const certificate = document.getElementById('certificate');
-const certificate2 = document.getElementById('certificate2');
-
-// Function to apply the rotation effect
-function rotateCard(event, element) {
-  const { left, top, width, height } = element.getBoundingClientRect();
-  const centerX = left + width / 2;
-  const centerY = top + height / 2;
-
-  const deltaX = event.clientX - centerX;
-  const deltaY = event.clientY - centerY;
-
-  const rotateX = (deltaY / height) * 20;  // Adjust the intensity of the rotation (up-down movement)
-  const rotateY = (deltaX / width) * 20;  // Adjust the intensity of the rotation (left-right movement)
-
-  // Apply the rotation to the element
-  element.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg)`;
-}
-
-// Add event listeners for mouse movement on the certificates
-document.querySelector('.contact-right').addEventListener('mousemove', (e) => {
-  rotateCard(e, certificate);
-  rotateCard(e, certificate2);
-});
-
-// Reset the transformation when mouse leaves
-document.querySelector('.contact-right').addEventListener('mouseleave', () => {
-  certificate.style.transform = 'rotateX(0deg) rotateY(0deg)';
-  certificate2.style.transform = 'rotateX(0deg) rotateY(0deg)';
 });
